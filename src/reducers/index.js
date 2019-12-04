@@ -1,4 +1,4 @@
-import { GET_GIF, LIKE_GIF } from '../constants/types';
+import { GET_GIF, LIKE_GIF, UNLIKE_GIF } from '../constants/types';
 
 const gif = {
   term: '',
@@ -28,6 +28,8 @@ export function favoritesReducer(state = [], action) {
         ...state,
         action.gif
       ];
+    case UNLIKE_GIF:
+      return state.filter(item => item.id !== action.id);
     default:
       return state;
   }

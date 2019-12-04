@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_GIF, LIKE_GIF } from '../constants/types';
+import { GET_GIF, LIKE_GIF, UNLIKE_GIF } from '../constants/types';
 import { API_URL } from '../constants/api';
 
 export function getGif(term, data) {
@@ -33,3 +33,11 @@ export function likeGif(gif) {
     gif
   }
 }
+
+export function unlikeGif(id) {
+  return {
+    type: UNLIKE_GIF,
+    id
+  }
+}
+

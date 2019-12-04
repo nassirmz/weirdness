@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_GIF } from '../constants/types';
+import { GET_GIF, LIKE_GIF } from '../constants/types';
 import { API_URL } from '../constants/api';
 
 export function getGif(term, data) {
@@ -24,5 +24,12 @@ export function startGetGif(term) {
       .catch(error => {
         console.log('error', error);
       });
+  }
+}
+
+export function likeGif(gif) {
+  return {
+    type: LIKE_GIF,
+    gif
   }
 }

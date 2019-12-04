@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Col, Container} from 'react-bootstrap';
 
-import { startGetGif } from '../../actions';
-
 import GifImage from '../gif';
+import Like from './Like';
 
 class SearchResult extends React.Component {
 
@@ -15,6 +14,7 @@ class SearchResult extends React.Component {
         <Col>
           <label>YOUR RESULT</label>
           <GifImage url={url} title={title} imgSize={150} cardSize={300} >
+            <Like />
           </GifImage>
         </Col>
       </Container>

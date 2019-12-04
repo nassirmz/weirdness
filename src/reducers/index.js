@@ -1,4 +1,4 @@
-import { GET_GIF } from '../constants/types';
+import { GET_GIF, LIKE_GIF } from '../constants/types';
 
 const gif = {
   term: '',
@@ -16,6 +16,18 @@ export function gifReducer(state = gif, action) {
       return {
         ...gifData,
       };
+    default:
+      return state;
+  }
+}
+
+export function favoritesReducer(state = [], action) {
+  switch (action.type) {
+    case LIKE_GIF:
+      return [
+        ...state,
+        action.gif
+      ];
     default:
       return state;
   }

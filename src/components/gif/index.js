@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
 const GifImage = (props) => {
-  const { url, title, imgSize, cardSize } = props;
+  const { url, title, imgSize, cardSize, children } = props;
   return (
     <Card className="text-center" border="light" style={{ width: cardSize, height: cardSize }}>
       <Card.Body>
@@ -10,6 +10,7 @@ const GifImage = (props) => {
         <Card.Text>
           <Card.Img  src={url}  height={imgSize} width={imgSize} />
         </Card.Text>
+        {children}
       </Card.Body>
     </Card>
   );

@@ -5,7 +5,7 @@ import Paragraph from '../paragraph';
 import Search from '../search';
 import SearchResult from '../search-result';
 
-const GifSection = () => {
+const SearchSection = () => {
   return (
     <div>
       <Row>
@@ -19,4 +19,4 @@ const GifSection = () => {
   );
 };
 
-export default GifSection;
+export default SearchSection;

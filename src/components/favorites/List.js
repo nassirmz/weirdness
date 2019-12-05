@@ -1,39 +1,20 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Container, Row } from 'react-bootstrap';
 
 import ListItem from './ListItem';
 
-class List extends React.Component {
+const List = (props) => {
+  const { favorites } = props;
 
-  renderList() {
-    const { favorites } = this.props;
+  return (
+    <Container>
+      <Row>
+        {favorites.map(gif => (
+          <ListItem gif={gif}/>
+        ))}
+      </Row>
+    </Container>
+  );
+};
 
-    return favorites.map(gif => {
-      return (
-        <ListItem gif={gif} />
-      )
-    })
-  }
-
-  render() {
-    return (
-      <Container>
-        <Row>
-          {this.renderList()}
-        </Row>
-      </Container>
-    );
-  }
-}
-
-function mapStateToProps(state) {
-  const { favorites } = state;
-  return {
-    favorites
-  };
-}
-
-export default connect(
-  mapStateToProps
-)(List);
+export default List;

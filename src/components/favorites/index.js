@@ -1,15 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import { Row, Container } from 'react-bootstrap';
 
 import List from './List';
+import Calculate from './calculate';
 
-const Favorites = () => {
-  return (
-    <Container>
-      <h5> YOUR LIKED GIFS </h5>
-      <List/>
-    </Container>
-  );
+class Favorites extends React.Component {
+
+  render () {
+    const { favorites } = this.props;
+    return (
+      <Container>
+        <h5> YOUR LIKED GIFS </h5>
+        <List favorites={favorites}/>
+        <Calculate nums={favorites.length} />
+      </Container>
+    );
+  }
+
 };
 
-export default Favorites;
+function mapStateToProps(state) {
+  const { favorites } = state;
+  return {
+    favorites
+  };
+}
+
+export default connect(
+  mapStateToProps
+)(Favorites);

@@ -10,7 +10,7 @@ class Slider extends React.Component {
     const { loadGif, gif } = this.props;
     const { term } = gif;
     const weirdness = e.target.value;
-    
+
     loadGif(term, weirdness);
   };
   render() {

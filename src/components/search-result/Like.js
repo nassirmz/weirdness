@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { likeGif } from '../../actions';
 import { Button } from 'react-bootstrap';
+
+import { likeGif, addMessage } from '../../actions';
 
 class Like extends React.Component {
   handleClick = (e) => {
     e.preventDefault();
-    const { gif, addGifToFavorites } = this.props;
+    const { gif, addGifToFavorites, addSuccessMessage } = this.props;
     addGifToFavorites(gif);
+    addSuccessMessage("Added to favorites. Please Search again!");
   };
 
   render() {
@@ -31,6 +33,9 @@ function mapDispatchToProps(dispatch) {
   return {
     addGifToFavorites: (gif) => {
       dispatch(likeGif(gif));
+    },
+    addSuccessMessage: (message) => {
+      dispatch(addMessage(message));
     }
   };
 }

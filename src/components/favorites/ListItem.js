@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Button, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import GifCard from '../gif';
 import Dislike from './Dislike';
 

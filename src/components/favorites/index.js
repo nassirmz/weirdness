@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import "./index.css"
 
-import { Row, Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 import List from './List';
 import Calculate from './calculate';

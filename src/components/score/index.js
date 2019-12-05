@@ -1,16 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
-import { Row, Container } from 'react-bootstrap';
+import { Row, Container, Button } from 'react-bootstrap';
 
 import GifCard from '../gif';
 
 class Score extends React.Component {
   render () {
-    const { favorites } = this.props;
+    const { favorites, history } = this.props;
+
     let num = favorites.length;
+
+    // don't show this page unless more than 4 favorites
+    if (!num) {
+      history.push("/");
+    }
+
     let sum = favorites.reduce((a, b) => a  + b.weirdness , 0);
-    console.log("sum", sum);
     let score = Math.round(sum / num);
 
     return (
@@ -27,6 +34,7 @@ class Score extends React.Component {
           })
           }
         </Row>
+        <Button variant="light" onClick={() => history.push("/")}>Start Over</Button>
       </Container>
     );
   }
@@ -40,4 +48,4 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps
-)(Score);
+)(withRouter(Score));

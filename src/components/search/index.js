@@ -16,6 +16,7 @@ class Search extends React.Component {
     e.preventDefault();
     const { weirdness, loadGif } = this.props;
     const { term } = this.state;
+
     loadGif(term, weirdness);
   };
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 
-const GifImage = (props) => {
+const GifCard = (props) => {
   const { url, title, imgSize, cardSize, children } = props;
   return (
     <Card className="text-center" border="light" style={{ width: cardSize, height: cardSize }}>
@@ -16,4 +16,4 @@ const GifImage = (props) => {
   );
 };
 
-export default GifImage;
+export default GifCard;

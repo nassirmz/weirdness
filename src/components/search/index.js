@@ -27,7 +27,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container className="mt-3">
         <Col sm={6}>
           <label>Search term</label>
           <InputGroup className="mb-3">

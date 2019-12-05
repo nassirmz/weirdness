@@ -16,7 +16,7 @@ class Like extends React.Component {
 
     return (
       <Button
-        variant="primary"
+        variant="light"
         size="sm"
         onClick={this.handleClick}
         disabled={likedAlready}

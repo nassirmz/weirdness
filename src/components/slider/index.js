@@ -16,7 +16,7 @@ class Slider extends React.Component {
   render() {
     const { weirdness } = this.props.gif;
     return (
-      <Container>
+      <Container className="mt-4">
       <ReactBootstrapSlider
         value={weirdness}
         slideStop={this.handleChange}
@@ -24,7 +24,7 @@ class Slider extends React.Component {
         max={10}
         min={0}
       />
-      <label>weirdness level <span>{weirdness}</span></label>
+      <p>weirdness level <span>{weirdness}</span></p>
       </Container>
     )
   }

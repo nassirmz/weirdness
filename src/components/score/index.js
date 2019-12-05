@@ -20,7 +20,7 @@ class Score extends React.Component {
           {favorites.map(gif => {
             const { url, title, weirdness } = gif;
             return (
-              <GifCard url={url} title={title} imgSize={50} cardSize={100}>
+              <GifCard url={url} title={title} imgSize={100} cardSize={150}>
                 <span>{weirdness}/10</span>
               </GifCard>
             )

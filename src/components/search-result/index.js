@@ -5,16 +5,21 @@ import { Col, Container} from 'react-bootstrap';
 import GifCard from '../gif';
 import Like from './Like';
 
+import Slider from '../slider';
+
 class SearchResult extends React.Component {
 
   render() {
     const { url, title } = this.props.gif;
+    if (!url) return '';
+
     return (
       <Container>
         <Col>
-          <label>YOUR RESULT</label>
+          <h6>YOUR RESULT</h6>
           <GifCard url={url} title={title} imgSize={150} cardSize={300} >
             <Like />
+            <Slider/>
           </GifCard>
         </Col>
       </Container>

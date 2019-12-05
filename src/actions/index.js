@@ -4,8 +4,12 @@ import { GET_GIF, LIKE_GIF, UNLIKE_GIF } from '../constants/types';
 import { API_URL } from '../constants/api';
 
 export function getGif(term, weirdness, data) {
-  const { id, title, images } = data;
+  let { id, title, images } = data;
   const { url } = images.downsized_large;
+
+  title = title.split(" GIF")[0];
+  title = title.slice(0, 12);
+
   return {
     gifData: { url, id, title, term, weirdness },
     type: GET_GIF

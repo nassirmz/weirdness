@@ -4,7 +4,6 @@ import { Row, Col } from 'react-bootstrap';
 import Paragraph from '../paragraph';
 import Search from '../search';
 import SearchResult from '../search-result';
-import Slider from '../slider';
 
 const SearchSection = () => {
   return (
@@ -14,7 +13,6 @@ const SearchSection = () => {
           <Paragraph/>
           <Search/>
           <SearchResult/>
-          <Slider/>
         </Col>
       </Row>
     </div>

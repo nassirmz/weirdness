@@ -5,13 +5,13 @@ const GifCard = (props) => {
   const { url, title, imgSize, cardSize, children } = props;
   return (
     <Card className="text-center" border="light" style={{ width: cardSize, height: cardSize }}>
-      <Card.Body>
-        <Card.Text size={12}>{title}</Card.Text>
+        <Card.Text>{title}</Card.Text>
         <Card.Text>
-          <Card.Img  src={url}  height={imgSize} width={imgSize} />
+          <Card.Img  src={url}   style={{width: imgSize, height: imgSize}} />
         </Card.Text>
+      <Card.Text>
         {children}
-      </Card.Body>
+      </Card.Text>
     </Card>
   );
 };

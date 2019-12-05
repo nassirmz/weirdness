@@ -14,9 +14,9 @@ class Score extends React.Component {
     let score = Math.round(sum / num);
 
     return (
-      <Container>
+      <Container className="text-center mt-3">
         <span>You scored {score} out of 10</span>
-        <Row>
+        <Row className="mt-4">
           {favorites.map(gif => {
             const { url, title, weirdness } = gif;
             return (

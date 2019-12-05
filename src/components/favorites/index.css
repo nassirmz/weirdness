@@ -1,0 +1,8 @@
+.Dislike {
+    position: absolute;
+    background: lightgray;
+    color: white;
+    top: -2px;
+    right: -2px;
+    border-radius: 50%;
+}

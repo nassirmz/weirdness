@@ -10,11 +10,11 @@ const Calculate = (props) => {
   if (nums === 0) return '';
 
   return (
-    <Container>
-        <Button disabled={nums < 5 } onClick={() => {history.push("/result")}}>CALCULATE MY WEIRDNESS SCORE</Button>
+    <Container className="text-center mt-3">
+        <Button disabled={nums < 5 } onClick={() => {history.push("/result")}} size="sm" variant="light">CALCULATE MY WEIRDNESS SCORE</Button>
 
       { (nums < 5 ) && (
-        <span>You must like {5 - nums} more GIF{remaining > 1 ? 's' : ''} to calculate your score</span>
+        <p className="mt-2">You must like {5 - nums} more GIF{remaining > 1 ? 's' : ''} to calculate your score</p>
       )}
     </Container>
   );

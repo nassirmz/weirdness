@@ -7,7 +7,6 @@ import { unlikeGif } from '../../actions';
 
 class ListItem extends React.Component {
   handleClick = () => {
-    console.log("removeFavoredGif");
     const { removeFavoredGif, gif } = this.props;
     removeFavoredGif(gif.id);
   };
@@ -34,7 +33,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     removeFavoredGif: (gifId) => {
-      console.log("removeFavoredGifId", gifId);
       dispatch(unlikeGif(gifId));
     }
   };

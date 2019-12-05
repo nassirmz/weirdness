@@ -13,14 +13,13 @@ class Search extends React.Component {
   }
 
   handleClick = (e) => {
-    console.log("handleClicked");
+    e.preventDefault();
     const { weirdness, loadGif } = this.props;
     const { term } = this.state;
-    loadGif(term);
+    loadGif(term, weirdness);
   };
 
   handleChange = (e) => {
-    console.log("onChangegettingCalled", e);
     this.setState({
       term: e.target.value
     });
@@ -55,8 +54,8 @@ class Search extends React.Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    loadGif: (term) => {
-      dispatch(startGetGif(term));
+    loadGif: (term, weirdness) => {
+      dispatch(startGetGif(term, weirdness));
     }
   };
 }

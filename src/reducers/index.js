@@ -14,7 +14,7 @@ export function gifReducer(state = gif, action) {
       const { gifData } = action;
       console.log("gifData", gifData);
       return {
-        ...gifData,
+        ...gifData
       };
     default:
       return state;

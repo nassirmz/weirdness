@@ -3,23 +3,21 @@ import axios from 'axios';
 import { GET_GIF, LIKE_GIF, UNLIKE_GIF } from '../constants/types';
 import { API_URL } from '../constants/api';
 
-export function getGif(term, data) {
+export function getGif(term, weirdness, data) {
   const { id, title, images } = data;
   const { url } = images.downsized_large;
   return {
-    gifData: { url, id, title, term },
+    gifData: { url, id, title, term, weirdness },
     type: GET_GIF
   }
 }
 
-export function startGetGif(term) {
+export function startGetGif(term, weirdness) {
   return (dispatch) => {
-    axios.get(`${API_URL}q=${term}`)
+    axios.get(`${API_URL}s=${term}&weirdness=${weirdness}`)
       .then(resp => {
-        const data = resp.data.data[0];
-        console.log(data.images);
-        console.log("data", data);
-        dispatch(getGif(term, data));
+        const data = resp.data.data;
+        dispatch(getGif(term, weirdness, data));
       })
       .catch(error => {
         console.log('error', error);

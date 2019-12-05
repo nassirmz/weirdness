@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_GIF, LIKE_GIF, START_OVER, UNLIKE_GIF } from '../constants/types';
+import { GET_GIF, LIKE_GIF, START_OVER, UNLIKE_GIF, ADD_MESSAGE, RESET_MESSAGE } from '../constants/types';
 import { API_URL } from '../constants/api';
 
 export function getGif(term, weirdness, data) {
@@ -24,6 +24,7 @@ export function startGetGif(term, weirdness) {
         dispatch(getGif(term, weirdness, data));
       })
       .catch(error => {
+        dispatch(addMessage("No Results for this search!"));
         console.error('error', error);
       });
   }
@@ -46,6 +47,19 @@ export function unlikeGif(id) {
 export function startOver() {
   return {
     type: START_OVER
+  }
+}
+
+export function addMessage(message) {
+  return {
+    type: ADD_MESSAGE,
+    message
+  }
+}
+
+export function resetMessage() {
+  return {
+    type: RESET_MESSAGE
   }
 }
 

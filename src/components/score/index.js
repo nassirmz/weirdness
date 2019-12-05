@@ -23,8 +23,8 @@ class Score extends React.Component {
 
     return (
       <Container className="text-center mt-3">
-        <span>You scored {score} out of 10</span>
-        <Row className="mt-4">
+        <h6>You scored {score} out of 10</h6>
+        <Row className="m-4">
           {favorites.map(gif => {
             const { url, title, weirdness, id } = gif;
             return (

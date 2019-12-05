@@ -6,6 +6,7 @@ import GifCard from '../gif';
 import Like from './Like';
 
 import Slider from '../slider';
+import Message from '../message';
 
 class SearchResult extends React.Component {
 
@@ -21,6 +22,7 @@ class SearchResult extends React.Component {
             <Like/>
             <Slider/>
           </GifCard>
+          <Message />
         </Col>
       </Container>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Col } from 'react-bootstrap';
 import GifCard from '../gif';
-import Dislike from './Dislike';
+import RoundButton from '../button/RoundButton';
 
 import { unlikeGif } from '../../actions';
 
@@ -17,7 +17,7 @@ class ListItem extends React.Component {
     return (
       <Col md={4}>
         <GifCard url={url} title={title} imgSize={120} cardSize={150}>
-          <Dislike handleClick={this.handleClick}/>
+          <RoundButton handleClick={this.handleClick} content="X" />
         </GifCard>
       </Col>
     );

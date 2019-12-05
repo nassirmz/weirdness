@@ -1,8 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import "./index.css"
-
 import { Container } from 'react-bootstrap';
 
 import List from './List';

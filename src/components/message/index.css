@@ -1,0 +1,13 @@
+.Message .modal-content {
+    padding: 15px;
+}
+
+.Message .modal-dialog {
+    width: 300px;
+}
+
+.Message .modal-body {
+    margin-top: -50px;
+    margin-left: 10px;
+    width: 90%;
+}

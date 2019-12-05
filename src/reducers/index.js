@@ -1,12 +1,15 @@
 import { combineReducers } from 'redux';
+
 import { favoritesReducer } from './favoriteReducer';
 import { gifReducer } from './gifReducer';
+import { messageReducer } from './messageReducer';
 
 import { START_OVER } from '../constants/types';
 
 const appReducer = combineReducers({
   gif: gifReducer,
-  favorites: favoritesReducer
+  favorites: favoritesReducer,
+  message: messageReducer
 });
 
 const rootReducer = (state, action) => {

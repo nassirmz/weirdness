@@ -10,13 +10,13 @@ const GifCard = (props) => {
       border="light"
       style={{ width: cardSize, height: cardSize, position: 'relative' }}
     >
-        <Card.Text>{title}</Card.Text>
-        <Card.Text>
-          <Card.Img  src={url}   style={{width: imgSize, height: imgSize}} />
-        </Card.Text>
+      <Card.Text>{title}</Card.Text>
       <Card.Text>
-        {children}
+        <Card.Img src={url} style={{ width: imgSize, height: imgSize }}/>
       </Card.Text>
+      <div>
+        {children}
+      </div>
     </Card>
   );
 };

@@ -1,36 +1,19 @@
-import { GET_GIF, LIKE_GIF, UNLIKE_GIF } from '../constants/types';
+import { combineReducers } from 'redux';
+import { favoritesReducer } from './favoriteReducer';
+import { gifReducer } from './gifReducer';
 
-const gif = {
-  term: '',
-  weirdness: 0,
-  url: '',
-  title: '',
-  id: ''
+import { START_OVER } from '../constants/types';
+
+const appReducer = combineReducers({
+  gif: gifReducer,
+  favorites: favoritesReducer
+});
+
+const rootReducer = (state, action) => {
+  if (action.type === START_OVER) {
+    state = {};
+  }
+  return appReducer(state, action);
 };
 
-export function gifReducer(state = gif, action) {
-  switch(action.type) {
-    case GET_GIF:
-      const { gifData } = action;
-      console.log("gifData", gifData);
-      return {
-        ...gifData
-      };
-    default:
-      return state;
-  }
-}
-
-export function favoritesReducer(state = [], action) {
-  switch (action.type) {
-    case LIKE_GIF:
-      return [
-        ...state,
-        action.gif
-      ];
-    case UNLIKE_GIF:
-      return state.filter(item => item.id !== action.id);
-    default:
-      return state;
-  }
-}
+export default rootReducer;

@@ -11,15 +11,17 @@ const Calculate = (props) => {
 
   return (
     <Container className="text-center mt-3">
-        <Button
-          disabled={nums < 5 }
-          onClick={() => {history.push("/result")}}
-          size="sm"
-          variant="light">
-          CALCULATE MY WEIRDNESS SCORE
-         </Button>
+      <Button
+        disabled={nums < 5}
+        onClick={() => {
+          history.push("/result")
+        }}
+        size="sm"
+        variant="light">
+        CALCULATE MY WEIRDNESS SCORE
+      </Button>
 
-      { (nums < 5 ) && (
+      {(nums < 5) && (
         <p
           className="mt-2">
           You must like {5 - nums} more GIF{remaining > 1 ? 's' : ''} to calculate your score

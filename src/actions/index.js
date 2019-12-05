@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_GIF, LIKE_GIF, UNLIKE_GIF } from '../constants/types';
+import { GET_GIF, LIKE_GIF, START_OVER, UNLIKE_GIF } from '../constants/types';
 import { API_URL } from '../constants/api';
 
 export function getGif(term, weirdness, data) {
@@ -24,7 +24,7 @@ export function startGetGif(term, weirdness) {
         dispatch(getGif(term, weirdness, data));
       })
       .catch(error => {
-        console.log('error', error);
+        console.error('error', error);
       });
   }
 }
@@ -40,6 +40,12 @@ export function unlikeGif(id) {
   return {
     type: UNLIKE_GIF,
     id
+  }
+}
+
+export function startOver() {
+  return {
+    type: START_OVER
   }
 }
 

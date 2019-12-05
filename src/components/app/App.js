@@ -10,13 +10,13 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Header />
+        <Header/>
         <BrowserRouter>
           <div className="mt-3">
-          <Switch>
-            <Route path="/" exact component={Dashboard} />
-            <Route path="/result" exact component={Score} />
-          </Switch>
+            <Switch>
+              <Route path="/" exact component={Dashboard}/>
+              <Route path="/result" exact component={Score}/>
+            </Switch>
           </div>
         </BrowserRouter>
       </div>

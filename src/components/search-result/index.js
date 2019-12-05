@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Col, Container} from 'react-bootstrap';
+import { Col, Container } from 'react-bootstrap';
 
 import GifCard from '../gif';
 import Like from './Like';
@@ -17,8 +17,8 @@ class SearchResult extends React.Component {
       <Container>
         <Col>
           <h6>YOUR RESULT</h6>
-          <GifCard url={url} title={title} imgSize={150} cardSize={300} >
-            <Like />
+          <GifCard url={url} title={title} imgSize={150} cardSize={300}>
+            <Like/>
             <Slider/>
           </GifCard>
         </Col>

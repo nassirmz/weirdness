@@ -13,18 +13,19 @@ class Slider extends React.Component {
 
     loadGif(term, weirdness);
   };
+
   render() {
     const { weirdness } = this.props.gif;
     return (
       <Container className="mt-4">
-      <ReactBootstrapSlider
-        value={weirdness}
-        slideStop={this.handleChange}
-        step={1}
-        max={10}
-        min={0}
-      />
-      <p>weirdness level <span>{weirdness}</span></p>
+        <ReactBootstrapSlider
+          value={weirdness}
+          slideStop={this.handleChange}
+          step={1}
+          max={10}
+          min={0}
+        />
+        <p>weirdness level <span>{weirdness}</span></p>
       </Container>
     )
   }

@@ -17,7 +17,7 @@ class ListItem extends React.Component {
     return (
       <Col md={4}>
         <GifCard url={url} title={title} imgSize={120} cardSize={150}>
-          <Dislike handleClick={this.handleClick} />
+          <Dislike handleClick={this.handleClick}/>
         </GifCard>
       </Col>
     );

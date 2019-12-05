@@ -10,7 +10,7 @@ const List = (props) => {
     <Container>
       <Row>
         {favorites.map(gif => (
-          <ListItem gif={gif}/>
+          <ListItem gif={gif} key={gif.id}/>
         ))}
       </Row>
     </Container>
